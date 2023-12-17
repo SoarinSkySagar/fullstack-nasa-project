@@ -25,12 +25,18 @@ function getAllLaunches() {
 
 function addNewLaunch(launch) {
     latestFlightNumber++
-    launches.set(launch.flightNumber, Object.assign(launch, {
-        flightNumber: latestFlightNumber,
-        customer: ['ZTM', 'Sagar'],
-        upcoming: true,
-        success: true
-    }))
+    // launches.set(launch.flightNumber, Object.assign(launch, {
+    //     flightNumber: latestFlightNumber,
+    //     customer: ['ZTM', 'Sagar'],
+    //     upcoming: true,
+    //     success: true
+    // }))
+    const newLaunch = Object.assign({}, launch);
+    newLaunch.flightNumber = latestFlightNumber;
+    newLaunch.customer = ['ZTM', 'Sagar'];
+    newLaunch.upcoming = true;
+    newLaunch.success = true;
+    launches.set(newLaunch.flightNumber, newLaunch);
 }
 
 function abort(launchId) {
