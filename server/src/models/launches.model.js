@@ -8,7 +8,7 @@ const launch = {
     rocket: 'Explorer IS1',
     launchDate: new Date('December 27, 2030'),
     target: 'Kepler-442 b',
-    customer: ['ZTM', 'NASA'],
+    customer: ['Sagar'],
     upcoming: true,
     success: true
 }
@@ -27,7 +27,7 @@ function addNewLaunch(launch) {
     latestFlightNumber++
     const newLaunch = Object.assign({}, launch);
     newLaunch.flightNumber = latestFlightNumber;
-    newLaunch.customer = ['ZTM', 'Sagar'];
+    newLaunch.customer = ['Sagar'];
     newLaunch.upcoming = true;
     newLaunch.success = true;
     launches.set(newLaunch.flightNumber, newLaunch);
