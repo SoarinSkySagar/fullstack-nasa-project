@@ -8,9 +8,9 @@ const launch = {
     rocket: 'Explorer IS1',
     launchDate: new Date('December 27, 2030'),
     target: 'Kepler-442 b',
-    customer: ['Sagar'],
-    upcoming: true,
-    success: true
+    customer: ['nil'],
+    upcoming: false,
+    success: false
 }
 
 launches.set(launch.flightNumber, launch)

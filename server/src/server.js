@@ -20,12 +20,7 @@ mongoose.connection.on('error', (err) => {
 
 
 async function startServer() {
-    await mongoose.connect(MONGO_URL, {
-        // useNewUrlParser: true,
-        // useFindAndModify: false,
-        // useCreateIndex: true,
-        // useUnifiedTopology: true
-    })
+    await mongoose.connect(MONGO_URL)
     await loadData()
     server.listen(PORT, () => {
         console.log(`Listening on port ${PORT}...`)
