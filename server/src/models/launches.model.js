@@ -3,21 +3,6 @@ const planetsDB = require('./planets.mongo')
 
 const DEFAULT_FLIGHT_NUMBER = 100
 
-const launch = {
-    flightNumber: 100,
-    mission: 'Kepler Exploration X',
-    rocket: 'Explorer IS1',
-    launchDate: new Date('December 27, 2030'),
-    target: 'Kepler-442 b',
-    customer: ['nil'],
-    upcoming: false,
-    success: false  
-}
-
-saveLaunch(launch)
-
-
-
 async function existsLaunch(launchId) {
     return await launchesDB.findOne({
         flightNumber: launchId
