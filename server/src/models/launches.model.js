@@ -69,19 +69,13 @@ async function addNewLaunch(launch) {
 }
 
 async function abort(launchId) {
-    try {
-        const aborted = await launchesDB.updateOne({
-            flightNumber: launchId
-        }, {
-            upcoming: false,
-            success: false
-        })
-        return aborted
-    } catch(err) {
-        return {
-            error: err
-        }
-    }
+    const aborted = await launchesDB.updateOne({
+        flightNumber: launchId
+    }, {
+        upcoming: false,
+        success: false
+    })
+    return aborted.modifiedCount === 1;
 }
 
 module.exports = {
