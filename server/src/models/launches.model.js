@@ -1,4 +1,3 @@
-const launches = new Map()
 const launchesDB = require('./launches.mongo')
 const planetsDB = require('./planets.mongo')
 
@@ -19,8 +18,10 @@ saveLaunch(launch)
 
 
 
-function existsLaunch(launchId) {
-    return launches.has(launchId)
+async function existsLaunch(launchId) {
+    return await launchesDB.findOne({
+        flightNumber: launchId
+    })
 }
 
 async function getLatestFlightNumber() {
@@ -67,10 +68,13 @@ async function addNewLaunch(launch) {
     await saveLaunch(newLaunch)
 }
 
-function abort(launchId) {
-    const aborted = launches.get(launchId)
-    aborted.upcoming = false
-    aborted.success = false
+async function abort(launchId) {
+    const aborted = await launchesDB.findOneAndUpdate({
+        flightNumber: launchId
+    }, {
+        upcoming: false,
+        success: false
+    })
     return aborted
 }
 
