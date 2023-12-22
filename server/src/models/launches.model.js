@@ -10,7 +10,7 @@ const launch = {
     target: 'Kepler-442 b',
     customer: ['nil'],
     upcoming: false,
-    success: false
+    success: false  
 }
 
 launches.set(launch.flightNumber, launch)
