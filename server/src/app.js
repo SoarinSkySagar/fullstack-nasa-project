@@ -2,21 +2,19 @@ const express = require('express')
 const cors = require('cors')
 const path = require('path')
 const morgan = require('morgan')
+const apiRouter = require('./routes/api')
 require('dotenv').config()
-
-const planetsRouter = require('./routes/planets/planets.router')
-const launchesRouter = require('./routes/launches/launchers.router')
 
 const app = express()
 
 app.use(cors({
-    origin: '*'
+    origin: process.env.CORS_URL
 }))
 app.use(morgan('combined'))
 app.use(express.json())
 app.use(express.static(path.join(__dirname, '..', 'public')))
-app.use('/planets', planetsRouter)
-app.use('/launches', launchesRouter)
+app.use('/v1', apiRouter)
+
 app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'index.html'))
 })

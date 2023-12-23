@@ -12,7 +12,7 @@ describe('Test GET /planets', () => {
     })
 
     test('It should respond with 200 success', async () => {
-        const response = await request(app).get('/planets')
+        const response = await request(app).get('/v1/planets')
         expect(response.statusCode).toBe(200)
     })
 })
