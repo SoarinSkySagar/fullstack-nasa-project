@@ -10,7 +10,7 @@ const launchesRouter = require('./routes/launches/launchers.router')
 const app = express()
 
 app.use(cors({
-    origin: process.env.CORS_URL
+    origin: '*'
 }))
 app.use(morgan('combined'))
 app.use(express.json())
