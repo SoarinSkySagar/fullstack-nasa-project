@@ -2,6 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const path = require('path')
 const morgan = require('morgan')
+require('dotenv').config()
 
 const planetsRouter = require('./routes/planets/planets.router')
 const launchesRouter = require('./routes/launches/launchers.router')
@@ -9,7 +10,7 @@ const launchesRouter = require('./routes/launches/launchers.router')
 const app = express()
 
 app.use(cors({
-    origin: '*'
+    origin: process.env.CORS_URL
 }))
 app.use(morgan('combined'))
 app.use(express.json())

@@ -1,5 +1,4 @@
-const API_URL = 'https://nasa-mission-control-40qb.onrender.com'
-// const API_URL = 'http://localhost:8000'
+const API_URL = process.env.REACT_APP_API_URL
 
 async function httpGetPlanets() {
   const res = await fetch(`${API_URL}/planets`)
