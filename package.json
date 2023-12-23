@@ -8,9 +8,9 @@
     "server": "npm run watch --prefix server",
     "client": "npm start --prefix client",
     "watch": "npm run server & npm run client",
-    "deploy": "npm run build --prefix client && npm start --prefix server",
+    "deploy": "npm run build-dev --prefix client && npm start --prefix server",
     "test": "npm test --prefix server && npm test --prefix client",
-    "deploy-cluster": "npm run build --prefix client && npm run cluster --prefix server"
+    "deploy-cluster": "npm run build-dev --prefix client && npm run cluster --prefix server"
   },
   "keywords": [],
   "author": "",
