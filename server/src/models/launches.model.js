@@ -14,15 +14,10 @@ async function loadLaunchData() {
             populate: [
                 {
                     path: 'rocket',
-                    select: {
-                        name: 1
-                    }
-                },
-                {
+                    select: {name: 1}
+                }, {
                     path: 'payloads',
-                    select: {
-                        customers: 1
-                    }
+                    select: {customers: 1}
                 }
             ]
         }
