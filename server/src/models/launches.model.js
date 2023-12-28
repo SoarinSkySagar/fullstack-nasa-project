@@ -5,6 +5,8 @@ require('dotenv').config()
 
 const DEFAULT_FLIGHT_NUMBER = 100
 
+// TODO: complete this!!!!
+
 async function loadLaunchData() {
     console.log('Downloading launch data...')
     const response = await axios.post(process.env.SPACEX_API_URL, {
