@@ -16,5 +16,7 @@ USER node
 
 COPY server/ server/
 CMD ["npm", "start", "--prefix", "server"]
+# CMD ["npm", "run", "cluster", "--prefix", "server"]
+
 
 EXPOSE 8000
