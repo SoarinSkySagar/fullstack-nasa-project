@@ -15,8 +15,13 @@ RUN npm run build-dev --prefix client
 USER node
 
 COPY server/ server/
-CMD ["npm", "start", "--prefix", "server"]
-# CMD ["npm", "run", "cluster", "--prefix", "server"]
+# CMD ["npm", "start", "--prefix", "server"]
+CMD ["sh", "-c", "npm run cluster --prefix server && sleep infinity"]
+
 
 
 EXPOSE 8000
+
+# docker build . -t soarinskysagar/nasa-project
+# docker run -it -p 8000:8000 soarinskysagar/nasa-project
+# docker push soarinskysagar/nasa-project
